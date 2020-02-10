@@ -9,7 +9,7 @@ public class Transforms implements IAnnotationTransformer{
 	public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, 
 			Method testMethod){
 		try{
-			annotation.setRetryAnalyzer(RetryAnalyzer.class);
+			annotation.setRetryAnalyzer(Retry.class);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

@@ -5,9 +5,29 @@
   	<listener class-name = "util.Transforms"/>
   	<listener class-name = "util.Listeners"/>
   </listeners>
-  <test name="Test">
+  <test name="ChromeTest">
+  <parameter name="browser" value="chrome"/>
+  	<!--<groups>
+  		<run>
+  			<include name = "Functional"/>
+  			<include name = "Sanity"/>
+  		</run>
+  	</groups>-->
     <classes>
       <class name="testcase.LoginPageTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
+  <test name="FirefoxTest">
+  <parameter name="browser" value="firefox"/>
+	<groups>
+	  	<run>
+	  		<include name = "Functional"/>
+	  		<include name = "Sanity"/>
+	  	</run>
+	</groups>
+    <classes>
+      <class name="testcase.LoginPageTest"/>
+    </classes>
+  </test>  
+  <!-- Test -->
 </suite> <!-- Suite -->
