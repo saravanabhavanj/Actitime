@@ -104,7 +104,7 @@ import util.ExtentReport;
 			e.printStackTrace();
 			Assert.assertTrue(false);
 		}
-		System.out.println("out of the loop");
+//		System.out.println("out of the loop");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);

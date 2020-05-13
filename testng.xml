@@ -6,7 +6,7 @@
 		<listener class-name="util.Listeners" />
 	</listeners>
 
-	<!-- <test name="ChromeTest for non admin user" verbose="1">
+	<test name="ChromeTest for non admin user" verbose="1">
 		<parameter name="browser" value="chrome" />
 		<parameter name="user" value="non admin" />
 		<groups>
@@ -66,9 +66,9 @@
 			<class name="testcase.LoginPageTest" />
 			<class name="testcase.EnterTimeTrackPageTest" />
 		</classes>
-	</test> -->
+	</test>
 	
-	<test name="IE Test for non admin user" verbose="1">
+	<!-- <test name="IE Test for non admin user" verbose="1">
 		<parameter name="browser" value="ie" />
 		<parameter name="user" value="non admin" />
 		<groups>
@@ -97,6 +97,6 @@
 			<class name="testcase.LoginPageTest" />
 			<class name="testcase.EnterTimeTrackPageTest" />
 		</classes>
-	</test>
+	</test> -->
 	<!-- Test -->
 </suite> <!-- Suite -->

@@ -35,6 +35,7 @@ public class EnterTimeTrackPage extends TestBase  {
 			validateUserLinkText();
 			String parentWindow = driver.getWindowHandle();
 			userLink.click();
+			Thread.sleep(4000);
 			WebDriverWait wait = new WebDriverWait(driver,10);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userProfilePopup_content")));
 			String popUpWindow = driver.getWindowHandle();

@@ -59,7 +59,7 @@ public class EnterTimeTrackPageTest extends TestBase {
 					System.out.println("user name - " + rdCredentialExcel.lhm.get("UserName"));
 					System.out.println("password - " + rdCredentialExcel.lhm.get("Password"));
 				} else {
-					System.out.println("Error while reading credentials excel");
+//					System.out.println("Error while reading credentials excel");
 				}
 				rdProfileExcel.getRowData(rowId);
 				if (rdProfileExcel.lhm.get("User").equalsIgnoreCase(user)) {
@@ -71,7 +71,7 @@ public class EnterTimeTrackPageTest extends TestBase {
 					userNameLink = firstName + " "+lastName;
 					System.out.println("fn - "+firstName+" ln- "+lastName+" email- "+email+" un - "+userName);
 				} else {
-					System.out.println("Error while reading profiledata excel");
+//					System.out.println("Error while reading profiledata excel");
 				}
 			}
 		} catch (Exception e) {
@@ -96,8 +96,8 @@ public class EnterTimeTrackPageTest extends TestBase {
 	}
 
 	@Parameters("user")
-	@Test(priority = 2, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" } )
-//			,dependsOnMethods = { "validateUserLinkTextTest" })
+	@Test(priority = 2, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" } 
+			,dependsOnMethods = { "validateUserLinkTextTest" })
 	public void validateUserLinkTest(String user) {
 		try {
 			getRowId(user);
@@ -110,8 +110,8 @@ public class EnterTimeTrackPageTest extends TestBase {
 	}
 
 	@Parameters("user")
-	@Test(priority = 3, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" }) 
-//			,dependsOnMethods = { "validateUserLinkTest" })
+	@Test(priority = 3, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" } 
+			,dependsOnMethods = { "validateUserLinkTest" })
 	public void validateFirstNameText(String user) {
 		try {
 			getRowId(user);
@@ -124,8 +124,8 @@ public class EnterTimeTrackPageTest extends TestBase {
 	}
 
 	@Parameters("user")
-	@Test(priority = 4, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" }) 
-//			,dependsOnMethods = { "validateUserLinkTest" })
+	@Test(priority = 4, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" } 
+			,dependsOnMethods = { "validateUserLinkTest" })
 	public void validateLastNameText(String user) {
 		try {
 			getRowId(user);
@@ -138,8 +138,8 @@ public class EnterTimeTrackPageTest extends TestBase {
 	}
 
 	@Parameters("user")
-	@Test(priority = 5, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" }) 
-//			,dependsOnMethods = { "validateUserLinkTest" })
+	@Test(priority = 5, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" } 
+			,dependsOnMethods = { "validateUserLinkTest" })
 	public void validateEmailText(String user) {
 		try {
 			getRowId(user);
@@ -152,8 +152,8 @@ public class EnterTimeTrackPageTest extends TestBase {
 	}
 
 	@Parameters("user")
-	@Test(priority = 6, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" }) 
-//			,dependsOnMethods = { "validateUserLinkTest" })
+	@Test(priority = 6, enabled = true, groups = { "Functional", "Sanity", "non admin", "admin" }
+			,dependsOnMethods = { "validateUserLinkTest" })
 	public void validateUserNameText(String user) {
 		try {
 			getRowId(user);
