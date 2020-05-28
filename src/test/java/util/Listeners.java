@@ -5,7 +5,10 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import com.relevantcodes.extentreports.LogStatus;
+
+import com.aventstack.extentreports.Status;
+
+//import com.relevantcodes.extentreports.LogStatus;
 import base.TestBase;
 
 public class Listeners extends TestBase implements ITestListener {
@@ -14,6 +17,9 @@ public class Listeners extends TestBase implements ITestListener {
 		String methodName = result.getName().trim();
 		Reporter.log(methodName + "- started execution", true);
 		extentReport();
+		
+//		logger = extent.createTest(methodName+" -started execution");
+//		logger.log(Status.INFO, methodName+"- started execution");
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
@@ -24,7 +30,9 @@ public class Listeners extends TestBase implements ITestListener {
 		try {
 			String methodName = result.getName().trim();
 			Reporter.log(methodName + "- failed execution", true);
-			TestBase.logger.log(LogStatus.FAIL, methodName + "- failed execution");
+//			TestBase.logger.log(LogStatus.FAIL, methodName + "- failed execution");
+			logger = extent.createTest(methodName);
+			logger.log(Status.FAIL, methodName+"- failed execution");
 			String qualifiedClassName = result.getInstanceName();
 			System.out.println("qualifiedClassName - " + qualifiedClassName);
 			String[] name = qualifiedClassName.split("\\.");
@@ -41,7 +49,9 @@ public class Listeners extends TestBase implements ITestListener {
 
 	public void onTestSkipped(ITestResult result) {
 		String methodName = result.getName().trim();
-		TestBase.logger.log(LogStatus.SKIP, methodName + "- skipped execution");
+//		TestBase.logger.log(LogStatus.SKIP, methodName + "- skipped execution");
+		logger = extent.createTest(methodName);
+		logger.log(Status.SKIP, methodName+"- skipped execution");
 		Reporter.log(methodName + " - skipped execution", true);
 	}
 
@@ -49,7 +59,9 @@ public class Listeners extends TestBase implements ITestListener {
 		try {
 			String methodName = result.getName().trim();
 			Reporter.log(methodName + " - started execution", true);
-			TestBase.logger = TestBase.extent.startTest(methodName + " - started execution");
+//			TestBase.logger = TestBase.extent.startTest(methodName + " - started execution");
+//			logger = extent.createTest(methodName);
+//			logger.log(Status.INFO, methodName+"- started execution");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,9 +71,11 @@ public class Listeners extends TestBase implements ITestListener {
 		try {
 			String methodName = result.getName().trim();
 			Reporter.log(methodName + " - executed successfully", true);
-			TestBase.logger.log(LogStatus.PASS, methodName + " - executed successfully");
+//			TestBase.logger.log(LogStatus.PASS, methodName + " - executed successfully");
+			logger = extent.createTest(methodName);
+			logger.log(Status.PASS, methodName+"- passed execution");
 			String qualifiedClassName = result.getInstanceName();
-			System.out.println("qualifiedClassName - " + qualifiedClassName);
+//			System.out.println("qualifiedClassName - " + qualifiedClassName);
 			String[] name = qualifiedClassName.split("\\.");
 			int count = 0;
 			for (String names : name) {
@@ -76,12 +90,13 @@ public class Listeners extends TestBase implements ITestListener {
 
 	public void onFinish(ITestContext result) {
 		try {
-			System.out.println("onFinish listeners method called");
 			String methodName = result.getName().trim();
-			Reporter.log(methodName + "- finished execution", true);
-			TestBase.extent.flush();
+//			Reporter.log(methodName + "- finished execution", true);
+//			TestBase.logger.log(LogStatus.PASS, methodName + " - completed execution");
+//			TestBase.extent.flush();
+			extent.flush();
 			Thread.sleep(3000);
-			TestBase.extent.endTest(TestBase.logger);
+//			TestBase.extent.endTest(TestBase.logger);
 //			TestBase.extent.close();
 		} catch (Exception e) {
 			e.printStackTrace();

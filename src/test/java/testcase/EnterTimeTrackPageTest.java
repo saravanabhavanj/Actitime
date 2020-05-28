@@ -69,7 +69,7 @@ public class EnterTimeTrackPageTest extends TestBase {
 					lastName = rdProfileExcel.lhm.get("LastName");
 					email = rdProfileExcel.lhm.get("Email");
 					userNameLink = firstName + " "+lastName;
-					System.out.println("fn - "+firstName+" ln- "+lastName+" email- "+email+" un - "+userName);
+//					System.out.println("fn - "+firstName+" ln- "+lastName+" email- "+email+" un - "+userName);
 				} else {
 //					System.out.println("Error while reading profiledata excel");
 				}
@@ -77,7 +77,7 @@ public class EnterTimeTrackPageTest extends TestBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("returned rowid -" + rowId);
+//		System.out.println("returned rowid -" + rowId);
 		return rowId;
 	}
 

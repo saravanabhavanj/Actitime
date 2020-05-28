@@ -101,7 +101,7 @@ public class EnterTimeTrackPage extends TestBase  {
 //			JavascriptExecutor js = (JavascriptExecutor) driver;
 			userName = driver.findElement(By.name("username"));
 			userNameVal = userName.getAttribute("value");
-			System.out.println("firstNameValue - "+userNameVal);
+			System.out.println("userNameValue - "+userNameVal);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

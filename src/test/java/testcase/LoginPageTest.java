@@ -36,7 +36,7 @@ public class LoginPageTest extends TestBase {
 			for (int i = 1; i < rdExcel.rowCount(); i++) {
 				rowId = i;
 				rdExcel.getRowData(rowId);
-				System.out.println("entered into loop and user is - " + rdExcel.lhm.get("User"));
+//				System.out.println("entered into loop and user is - " + rdExcel.lhm.get("User"));
 				if (rdExcel.lhm.get("User").equalsIgnoreCase(user)) {
 					userName = rdExcel.lhm.get("UserName");
 					password = rdExcel.lhm.get("Password");

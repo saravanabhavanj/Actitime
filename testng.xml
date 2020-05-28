@@ -36,6 +36,7 @@
 			<class name="testcase.EnterTimeTrackPageTest" />
 		</classes>
 	</test>
+	
 	<test name="FirefoxTest for non admin user">
 		<parameter name="browser" value="firefox" />
 		<parameter name="user" value="non admin" />

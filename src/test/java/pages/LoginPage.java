@@ -28,7 +28,7 @@ public class LoginPage extends TestBase {
 
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
-		Reporter.log("Intialized all the elements in Login Page ", true);
+//		Reporter.log("Intialized all the elements in Login Page ", true);
 	}
 
 	public String validatePageTitle() {
@@ -43,8 +43,8 @@ public class LoginPage extends TestBase {
 		String timeTrackPgTitle = null;
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			System.out.println("un-" + username + "pwd-" + password + "usr-" + user);
-			System.out.println("loginpage validateLogin method called");
+//			System.out.println("un-" + username + "pwd-" + password + "usr-" + user);
+//			System.out.println("loginpage validateLogin method called");
 			this.username.sendKeys(username);
 			this.password.sendKeys(password);
 			loginBttn.click();
@@ -79,7 +79,7 @@ public class LoginPage extends TestBase {
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logo_aT")));
 				// Thread.sleep(4000);
 				timeTrackPgTitle = driver.getTitle();
-				System.out.println("timeTrackPage Title - " + timeTrackPgTitle);
+//				System.out.println("timeTrackPage Title - " + timeTrackPgTitle);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
